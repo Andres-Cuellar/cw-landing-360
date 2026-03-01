@@ -1,0 +1,125 @@
+---
+import logo from "../assets/logo.webp";
+---
+
+<header class="header">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <img src={logo.src} alt="Creamos tu web - Logo" class="logo-icon"/>
+    </a>
+
+    <nav class="nav">
+      <a href="#nosotros" class="nav-link">Nosotros</a>
+      <a href="#portafolio" class="nav-link">Portafolio</a>
+      <a href="#planes" class="nav-link">Servicios</a>
+      <a href="#testimonios" class="nav-link">Testimonios</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <a href="#contacto" class="btn-quote">Agendar reunión</a>
+  </div>
+</header>
+
+<style>
+.header {
+    background-color: var(--clr-bg);
+    width: 100%;
+    /* To match the image where the header itself looks like a floating bar or a clean top bar on a gray background */
+    padding: 16px 24px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .header-container {
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--clr-text);
+    max-width: 200px;
+  }
+
+  .logo-icon {
+    max-width: 200px;
+  }
+
+  .logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--clr-text);
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .nav-item-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .nav-item-dropdown:hover .nav-link,
+  .nav-link:hover {
+    color: var(--clr-orange);
+  }
+
+  .chevron {
+    color: var(--clr-text);
+    transition:
+      transform 0.2s,
+      color 0.2s;
+  }
+
+  .nav-item-dropdown:hover .chevron {
+    color: var(--clr-orange);
+  }
+
+  .btn-quote {
+    background-color: var(--clr-navy);
+    color: var(--clr-bg);
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition:
+      background-color 0.2s,
+      transform 0.1s;
+  }
+
+  .btn-quote:hover {
+    background-color: var(--clr-navy-hover);
+  }
+
+  .btn-quote:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 900px) {
+    .nav {
+      display: none;
+    }
+  }
+</style>

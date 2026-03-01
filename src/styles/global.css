@@ -1,0 +1,81 @@
+/* ============================================================
+   GLOBAL DESIGN TOKENS — landing-cw
+   All raw hex values live here. Components reference variables.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* ── Base reset ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+}
+
+/* ── Color tokens ───────────────────────────────────────── */
+:root {
+  /* Font */
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  /* Brand accent */
+  --clr-accent:         #822C21;
+  --clr-accent-hover:   #601710;
+  --clr-accent-bg:      #EC980B;
+  --clr-accent-border:  #ffdda2;
+  --clr-accent-light:   #EC980B;   /* hover bg on secondary buttons */
+
+  /* Dark surfaces */
+  --clr-navy:           #601710;   /* header bg, hero headline */
+  --clr-navy-hover:     #822C21;
+  --clr-void:           #1f0300;   /* contact section */
+  --clr-featured:       #601710;   /* pricing featured card */
+  --clr-surface-dark:   #601710;   /* form card */
+  --clr-surface-dark2:  #601710;   /* form header row */
+  --clr-surface-input:  #601710;   /* text inputs */
+  --clr-surface-input2: #601710;   /* focused input */
+  --clr-ink-soft:       #601710;   /* slightly lighter dark */
+
+  /* White / light surfaces */
+  --clr-bg:             #ffffff;
+  --clr-bg-page:        #f5f5f5;
+  --clr-bg-subtle:      #f9fafb;
+  --clr-bg-muted:       #f3f4f6;
+
+  /* Borders */
+  --clr-border:         #e5e7eb;
+  --clr-border-md:      #d1d5db;
+  --clr-border-input:   #404040;
+  --clr-border-dark:    #333333;
+  --clr-border-darker:  #444444;
+
+  /* Text — on light backgrounds */
+  --clr-text:           #111827;   /* primary */
+  --clr-text-2:         #374151;
+  --clr-text-3:         #4b5563;
+  --clr-text-4:         #ffffff;
+  --clr-text-5:         #9ca3af;
+  --clr-text-6:         #a1a1aa;
+
+  /* Text — on dark backgrounds */
+  --clr-on-dark:        #ffffff;
+  --clr-on-dark-2:      #e5e7eb;
+  --clr-on-dark-3:      #d1d5db;
+  --clr-on-dark-4:      #9ca3af;
+  --clr-on-dark-5:      #f3f4f6;
+
+  /* Status / UI */
+  --clr-success:        #10b981;
+  --clr-orange:         #ff7b00;
+  --clr-error:          #ff3b30;
+
+  /* Misc chart / decoration kept here for traceability */
+  --clr-chart-green:    #00f260;
+  --clr-chart-green2:   #00e676;
+}

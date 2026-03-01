@@ -1,0 +1,601 @@
+---
+const waveHeights = [
+  10, 14, 10, 18, 14, 22, 35, 25, 45, 30, 60, 40, 75, 50, 90, 100, 70, 50, 85,
+  40, 65, 30, 55, 25, 40, 20, 30, 15, 20, 10, 14, 10, 10,
+];
+---
+
+<section class="problems-section" id="problemas">
+  <div class="problems-container">
+    <div class="problems-header" style="max-width: 800px;">
+      <span class="badge">EL CAOS TÉCNICO</span>
+      <h2 class="title">Pierdes Dinero Por Fricción</h2>
+      <p
+        style="font-size: 18px; color: #4b5563; margin-top: 24px; line-height: 1.6;"
+      >
+        Entendemos la frustración. Atrapas la atención de tu cliente, pero las
+        herramientas desconectadas y procesos manuales hacen que se enfríen. <strong
+          >No necesitas aprender tecnología. Necesitas que alguien ya la domine.</strong
+        > Nuestro ecosistema de ventas trabaja por ti.
+      </p>
+    </div>
+
+    <div class="problems-grid">
+      <!-- Left Column -->
+      <div class="grid-col">
+        <!-- Card 1 -->
+        <div class="problem-card">
+          <div class="card-text">
+            <span class="card-subtitle">Coaches</span>
+            <h3 class="card-title">
+              Pierdes leads por no responder en WhatsApp<br />en los primeros 5
+              minutos
+            </h3>
+          </div>
+          <div class="visual-container phones-visual">
+            <div class="phone-ring phone-left">
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="App Screen"
+                class="screen-img"
+              />
+              <div>
+                <p>
+                  Cada lead que no recibe respuesta inmediata se enfría —y se va
+                  con otro coach que sí tenía el proceso listo. No es falta de
+                  tiempo tuyo, es falta de automatización. Nuestro ecosistema
+                  responde, califica y agenda por ti, 24/7, sin que muevas un
+                  dedo.
+                </p>
+              </div>
+              <div class="branding-overlay">
+                <span class="overlay-text">Lead status: Lost</span>
+              </div>
+            </div>
+            <div class="phone-ring phone-center">
+              <img
+                src="https://images.unsplash.com/photo-1541560052-5e137f229371?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Person Screen"
+                class="screen-img"
+              />
+            </div>
+            <div class="phone-ring phone-right">
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Tech Screen"
+                class="screen-img"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="problem-card bg-dark">
+          <div class="card-text">
+            <span class="card-subtitle text-gray">Consultores</span>
+            <h3 class="card-title text-white">
+              No saber cuántas ventas<br />se cerrarán este mes
+            </h3>
+          </div>
+          <div class="visual-container comm-visual">
+            <div
+              class="comm-box"
+              style="background:#333; color:white; border:1px solid #444;"
+            >
+              <span class="box-label text-white">Incertidumbre</span>
+              <div class="avatars">
+                <div class="avatar bg-gray"></div>
+                <div class="avatar bg-gray"></div>
+                <div class="avatar-add" style="background:#ff3b30">?</div>
+              </div>
+            </div>
+            <div class="connection">
+              <div class="line" style="background:#555"></div>
+              <div class="icon-circle" style="border-color:#555; color:#555">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  ><path
+                    d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  ></path>
+                </svg>
+              </div>
+              <div class="line" style="background:#555"></div>
+            </div>
+            <div class="comm-box faded" style="background:#222;">
+              <span class="box-label text-gray">Caos financ.</span>
+              <div class="avatars">
+                <div class="avatar bg-gray" style="background:#444"></div>
+                <div class="avatar bg-gray" style="background:#444"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 (Added to balance the bottom left) -->
+        <!-- <div class="problem-card">
+                    <div class="card-text">
+                        <span class="card-subtitle"
+                            >Prestadores de servicios</span
+                        >
+                        <h3 class="card-title">
+                            El costo de oportunidad de hacer todo manualmente
+                        </h3>
+                    </div>
+                    <div
+                        class="visual-container"
+                        style="height: 80px; align-items:flex-end;"
+                    >
+                        <div
+                            style="width: 100%; height: 40px; background: repeating-linear-gradient(45deg, #f3f4f6, #f3f4f6 10px, #e5e7eb 10px, #e5e7eb 20px); border-radius: 8px;"
+                        >
+                        </div>
+                    </div>
+                </div> -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="grid-col">
+        <!-- Card 3 -->
+        <div class="problem-card bg-dark">
+          <div class="card-text">
+            <span class="card-subtitle text-gray">Infoproductores</span>
+            <h3 class="card-title text-white">
+              La parálisis técnica de conectar herramientas que no sincronizan
+            </h3>
+          </div>
+          <div class="visual-container plugs-visual">
+            <svg
+              width="100%"
+              height="80"
+              viewBox="0 0 400 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <!-- Left Cord -->
+              <rect x="0" y="36" width="100" height="8" fill="#ff3b30"></rect>
+              <path
+                d="M100 20 C100 10, 140 10, 140 20 L140 60 C140 70, 100 70, 100 60 Z"
+                fill="#ff3b30"></path>
+              <rect x="140" y="30" width="15" height="6" fill="#ff3b30" rx="2"
+              ></rect>
+              <rect x="140" y="44" width="15" height="6" fill="#ff3b30" rx="2"
+              ></rect>
+
+              <!-- Right Cord -->
+              <rect x="300" y="36" width="100" height="8" fill="#ffffff"></rect>
+              <path
+                d="M300 20 C300 10, 260 10, 260 20 L260 60 C260 70, 300 70, 300 60 Z"
+                fill="#ffffff"></path>
+              <rect x="245" y="30" width="15" height="6" fill="#ffffff" rx="2"
+              ></rect>
+              <rect x="245" y="44" width="15" height="6" fill="#ffffff" rx="2"
+              ></rect>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="problem-card card-tall">
+          <div class="card-text">
+            <span class="card-subtitle">Agencias</span>
+            <h3 class="card-title large-title">
+              La mantener un proceso desorganizado
+            </h3>
+          </div>
+
+          <div class="visual-container chaos-visual">
+            <!-- Scattered "task" sticky notes -->
+            <div class="sticky sticky-1"><span class="s-dot red"></span>Brief cliente</div>
+            <div class="sticky sticky-2"><span class="s-dot yellow"></span>Propuesta</div>
+            <div class="sticky sticky-3"><span class="s-dot red"></span>Revisión #7</div>
+            <div class="sticky sticky-4"><span class="s-dot gray"></span>Entrega???</div>
+            <div class="sticky sticky-5"><span class="s-dot red"></span>¿Quién lo hace?</div>
+            <div class="sticky sticky-6"><span class="s-dot yellow"></span>Pendiente…</div>
+
+            <!-- Central error badge -->
+            <div class="chaos-error">
+              <span class="error-code">404</span>
+              <span class="error-msg">Proceso no encontrado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problems-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px 24px 80px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--clr-bg-page);
+  }
+  .problems-container {
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .problems-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .badge {
+    display: inline-block;
+    color: var(--clr-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border: 1px solid var(--clr-accent-border);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background: var(--clr-accent-bg);
+  }
+  .title {
+    color: var(--clr-text);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.03em;
+  }
+  .problems-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+  }
+  .grid-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .problem-card {
+    background: var(--clr-bg);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  }
+  .bg-dark {
+    background: var(--clr-ink-soft);
+  }
+  .card-tall {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .card-text {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .card-subtitle {
+    display: block;
+    color: var(--clr-accent);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    color: var(--clr-text);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .large-title {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+  .text-gray {
+    color: var(--clr-text-5) !important;
+  }
+  .text-white {
+    color: var(--clr-bg) !important;
+  }
+  .visual-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  /* Phones Visual */
+  .phones-visual {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  .phone-ring {
+    background: #000;
+    border-radius: 24px 24px 0 0;
+    padding: 8px 8px 0 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+  }
+  .screen-img {
+    border-radius: 16px 16px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .phone-left {
+    width: 160px;
+    height: 100%;
+    z-index: 2;
+    margin-left: -40px;
+  }
+  .phone-center {
+    width: 150px;
+    height: 80%;
+    z-index: 3;
+    margin-bottom: -20px;
+  }
+  .phone-right {
+    width: 140px;
+    height: 60%;
+    z-index: 1;
+    margin-right: -40px;
+    margin-bottom: -40px;
+    opacity: 0.6;
+  }
+  .branding-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    background: rgba(255, 59, 48, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  .overlay-text {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  /* Comm Visual */
+  .comm-visual {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .comm-box {
+    background: var(--clr-bg-subtle);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 160px;
+  }
+  .faded {
+    opacity: 0.7;
+    background: var(--clr-bg-muted);
+  }
+  .box-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--clr-text-3);
+  }
+  .avatars {
+    display: flex;
+    align-items: center;
+  }
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-right: -8px;
+    object-fit: cover;
+  }
+  .bg-gray {
+    background: var(--clr-border-md);
+  }
+  .avatar-add {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--clr-accent);
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    z-index: 4;
+    font-weight: bold;
+  }
+  .connection {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  .line {
+    height: 2px;
+    background: var(--clr-text-3);
+    flex: 1;
+  }
+  .icon-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-text-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    color: var(--clr-text-3);
+  }
+
+  /* Plugs Visual */
+  .plugs-visual {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Wave Visual */
+  .wave-visual {
+    height: 220px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .waveform {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 60px;
+    width: 100%;
+    justify-content: center;
+  }
+  .wave-bar {
+    width: 3px;
+    background: var(--clr-bg);
+    border-radius: 2px;
+  }
+  .wave-dot {
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+
+  /* Chaos Visual (Card 4) */
+  .chaos-visual {
+    height: 240px;
+    position: relative;
+    width: 100%;
+  }
+  .sticky {
+    position: absolute;
+    background: var(--clr-bg);
+    border: 1px solid var(--clr-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--clr-text-3);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+  }
+  .s-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .s-dot.red    { background: #ff3b30; }
+  .s-dot.yellow { background: #ffa500; }
+  .s-dot.gray   { background: rgba(0,0,0,0.2); }
+
+  .sticky-1 { top: 10px;  left: 0%;   transform: rotate(-4deg); }
+  .sticky-2 { top: 14px;  right: 4%;  transform: rotate(3deg);  }
+  .sticky-3 { top: 72px;  left: 6%;   transform: rotate(2deg);  }
+  .sticky-4 { top: 68px;  right: 0%;  transform: rotate(-3deg); }
+  .sticky-5 { bottom: 44px; left: 2%;  transform: rotate(-2deg); }
+  .sticky-6 { bottom: 40px; right: 6%; transform: rotate(4deg);  }
+
+  .chaos-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--clr-bg);
+    border: 1px solid rgba(255, 59, 48, 0.35);
+    box-shadow: 0 0 32px rgba(255, 59, 48, 0.10), 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 18px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    z-index: 4;
+  }
+  .error-code {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #ff3b30;
+    line-height: 1;
+  }
+  .error-msg {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clr-text-5);
+  }
+
+  @media (max-width: 1024px) {
+    .problems-grid {
+      grid-template-columns: 1fr;
+    }
+    .card-tall {
+      height: auto;
+    }
+    .phones-visual {
+      height: 250px;
+    }
+  }
+  @media (max-width: 768px) {
+    .title {
+      font-size: 40px;
+    }
+    .card-title {
+      font-size: 24px;
+    }
+    .large-title {
+      font-size: 30px;
+    }
+    .comm-visual {
+      flex-direction: column;
+      height: auto;
+      gap: 16px;
+      padding: 0;
+    }
+    .connection {
+      transform: rotate(90deg);
+      margin: 16px 0;
+    }
+  }
+</style>

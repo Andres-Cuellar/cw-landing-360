@@ -1,0 +1,301 @@
+---
+const faqs = [
+  {
+    q: "¿Tengo que saber programar o configurar algo yo mismo?",
+    a: "No. Nuestro servicio es completamente 'Done For You' (Hecho Por Ti). Construimos todo desde cero, conectamos las herramientas y te entregamos un ecosistema listo para vender.",
+  },
+  {
+    q: "¿Ya tengo mi dominio y redes sociales, pueden integrarse?",
+    a: "Absolutamente. Conectamos tu dominio actual, Facebook, Instagram y WhatsApp oficial para centralizar toda tu operación de ventas en un solo tablero.",
+  },
+  {
+    q: "¿Cuánto tiempo tarda la implementación?",
+    a: "Depende del plan seleccionado y la complejidad, pero típicamente nuestros ecosistemas están entregados, probados y listos para facturar en 2 a 4 semanas.",
+  },
+  {
+    q: "¿Qué pasa si necesito cambios después de la entrega?",
+    a: "Todos nuestros planes incluyen soporte post-lanzamiento. Te acompañamos en los primeros días y podemos realizar ajustes estratégicos para optimizar tus conversiones.",
+  },
+  {
+    q: "¿Funciona esto si estoy en México, Colombia, Argentina o España?",
+    a: "Sí. Configuramos integraciones de pago locales o internacionales (como Stripe y PayPal) y automatizaciones de WhatsApp que funcionan en cualquier parte del mundo de habla hispana.",
+  },
+  {
+    q: "¿Cómo se protegen mis datos y los de mis clientes?",
+    a: "Utilizamos la infraestructura nativa de GoHighLevel y n8n bajo los más estrictos estándares de encriptación y privacidad comercial (GDPR).",
+  },
+  {
+    q: "¿Puedo empezar con el plan básico y escalar después?",
+    a: "Por supuesto. Nuestros sistemas son escalables y modulares. Una vez tu volumen de leads crezca, podemos inyectarle IA o automatizaciones más complejas con un upgrade de plan.",
+  },
+];
+---
+
+<section class="faq-section" id="faq">
+  <div class="container">
+
+    <div class="faq-header">
+      <div class="header-left">
+        <span class="badge">FAQ</span>
+        <h2 class="title">Preguntas<br/>frecuentes</h2>
+      </div>
+      <div class="header-right">
+        <p class="subtitle">
+          Resolvemos las dudas más comunes antes de que las tengas.
+          Si algo no está aquí, escríbenos directamente.
+        </p>
+        <a href="#contact" class="cta-link">
+          Hablar con el equipo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <div class={`faq-item${index === 0 ? " open" : ""}`} data-faq>
+          <button class="faq-trigger" aria-expanded={index === 0 ? "true" : "false"}>
+            <span class="faq-num">0{index + 1}</span>
+            <span class="faq-q">{faq.q}</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p class="faq-a">{faq.a}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px 120px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--clr-bg-page);
+  }
+
+  .container {
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  /* ── Header 2-col ── */
+  .faq-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-self: flex-start;
+    color: var(--clr-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border: 1px solid var(--clr-accent-border);
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+
+  .title {
+    color: var(--clr-text);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin: 0;
+    letter-spacing: -0.03em;
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 8px;
+  }
+
+  .subtitle {
+    color: var(--clr-text-3);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 450;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--clr-accent);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .cta-link:hover {
+    gap: 12px;
+  }
+
+  /* ── Accordion list ── */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .faq-item {
+    background: var(--clr-bg);
+    border: 1px solid var(--clr-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .faq-item:hover {
+    border-color: #d0d5dd;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .faq-item.open {
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 0 3px var(--clr-accent-bg), 0 4px 20px rgba(26,141,249,0.08);
+  }
+
+  .faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .faq-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--clr-text-5);
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    width: 28px;
+    transition: color 0.2s;
+  }
+
+  .faq-q {
+    font-size: 16px;
+    font-weight: 630;
+    color: var(--clr-text);
+    line-height: 1.45;
+    flex: 1;
+    transition: color 0.2s;
+  }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    color: var(--clr-text-4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s;
+    display: flex;
+  }
+
+  /* Open state */
+  .faq-item.open .faq-num {
+    color: var(--clr-accent);
+  }
+  .faq-item.open .faq-q {
+    color: var(--clr-text);
+  }
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--clr-accent);
+  }
+
+  /* Body */
+  .faq-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .faq-item.open .faq-body {
+    grid-template-rows: 1fr;
+  }
+
+  .faq-body-inner {
+    overflow: hidden;
+  }
+
+  .faq-a {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--clr-text-3);
+    margin: 0;
+    padding: 0 24px 22px 68px;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .faq-header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .title {
+      font-size: 38px;
+    }
+    .faq-a {
+      padding: 0 20px 20px 20px;
+    }
+    .faq-trigger {
+      padding: 18px 20px;
+      gap: 14px;
+    }
+    .faq-num {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const items = document.querySelectorAll<HTMLElement>("[data-faq]");
+
+  items.forEach((item) => {
+    const trigger = item.querySelector<HTMLButtonElement>(".faq-trigger")!;
+
+    trigger.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+
+      items.forEach((i) => {
+        i.classList.remove("open");
+        i.querySelector<HTMLButtonElement>(".faq-trigger")!
+          .setAttribute("aria-expanded", "false");
+      });
+
+      if (!isOpen) {
+        item.classList.add("open");
+        trigger.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+</script>

@@ -1,0 +1,275 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <div class="page-background">
+    <Header />
+
+    <main class="thanks-section">
+      <div class="container">
+
+        <!-- Check icon -->
+        <div class="check-wrap">
+          <div class="check-ring check-ring-3"></div>
+          <div class="check-ring check-ring-2"></div>
+          <div class="check-ring check-ring-1"></div>
+          <div class="check-circle">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M7 16.5L13 22.5L25 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="badge">CITA CONFIRMADA</div>
+
+        <h1 class="title">
+          ¡Tu reunión está<br/>agendada!
+        </h1>
+
+        <p class="message">
+          Hemos enviado todos los detalles de la reunión a tu correo electrónico.
+          Revisa tu bandeja de entrada (y la carpeta de spam, por si acaso).
+        </p>
+
+        <div class="info-card">
+          <div class="info-row">
+            <span class="info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6L22 8"/>
+              </svg>
+            </span>
+            <span>Revisa tu bandeja de entrada — te enviamos un resumen completo de la cita.</span>
+          </div>
+          <div class="info-divider"></div>
+          <div class="info-row">
+            <span class="info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <span>Un asesor de nuestro equipo se conectará contigo en el horario que elegiste.</span>
+          </div>
+        </div>
+
+        <!-- CTA WhatsApp -->
+        <a
+          href="https://wa.me/18885453113?text=Hola%2C%20he%20agendado%20una%20cita%20pero%20quisiera%20hablar%20con%20un%20asesor."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-whatsapp"
+        >
+          <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor">
+            <path d="M16 2a14 14 0 0 0-12.19 20.89L2 30l7.3-1.78A14 14 0 1 0 16 2zm0 25.5a11.44 11.44 0 0 1-5.84-1.6l-.42-.25-4.33 1.05 1.08-4.22-.28-.44A11.5 11.5 0 1 1 16 27.5zm6.29-8.56c-.34-.17-2.03-1-2.34-1.11s-.54-.17-.77.17-.88 1.11-1.08 1.34-.4.26-.74.09a9.32 9.32 0 0 1-2.74-1.69 10.3 10.3 0 0 1-1.9-2.36c-.2-.34 0-.52.15-.69s.34-.4.51-.6a2.27 2.27 0 0 0 .34-.57.63.63 0 0 0 0-.6c-.09-.17-.77-1.85-1.05-2.53s-.56-.57-.77-.58h-.65a1.26 1.26 0 0 0-.91.43 3.84 3.84 0 0 0-1.2 2.85 6.67 6.67 0 0 0 1.4 3.54c.17.23 2.4 3.66 5.82 5.13a19.6 19.6 0 0 0 1.94.72 4.67 4.67 0 0 0 2.14.13c.65-.1 2.03-.83 2.32-1.63a2.87 2.87 0 0 0 .2-1.63c-.08-.14-.31-.23-.65-.4z"/>
+          </svg>
+          Continuar por WhatsApp
+        </a>
+
+        <!-- Subtle internal link -->
+        <a href="https://wa.me/18885453113?text=He%20agendado%20una%20cita%2C%20pero%20quiero%20hablar%20con%20un%20asesor." target="_blank" rel="noopener noreferrer" class="advisor-link">
+          He agendado una cita, pero quiero hablar con un asesor
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .page-background {
+    background-color: var(--clr-bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .thanks-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px 100px;
+  }
+
+  .container {
+    max-width: 560px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* ── Animated check ── */
+  .check-wrap {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .check-ring {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--clr-accent);
+    animation: pulse-ring 2.4s ease-out infinite;
+  }
+  .check-ring-1 { width: 88px; height: 88px; opacity: 0.08; animation-delay: 0s; }
+  .check-ring-2 { width: 68px; height: 68px; opacity: 0.12; animation-delay: 0.3s; }
+  .check-ring-3 { width: 50px; height: 50px; opacity: 0.18; animation-delay: 0.6s; }
+
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.9); opacity: 0.18; }
+    60%  { transform: scale(1.1); opacity: 0.05; }
+    100% { transform: scale(0.9); opacity: 0.18; }
+  }
+
+  .check-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--clr-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(26, 141, 249, 0.35);
+  }
+
+  /* ── Badge ── */
+  .badge {
+    display: inline-block;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 5px 14px;
+    border: 1px solid var(--clr-accent-border);
+    border-radius: 6px;
+    text-transform: uppercase;
+    background: var(--clr-accent-bg);
+  }
+
+  /* ── Title ── */
+  .title {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--clr-text);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  /* ── Message ── */
+  .message {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--clr-text-3);
+    margin: 0;
+    font-weight: 450;
+    max-width: 460px;
+  }
+
+  /* ── Info card ── */
+  .info-card {
+    width: 100%;
+    background: var(--clr-bg);
+    border: 1px solid var(--clr-border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-align: left;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--clr-text-3);
+    padding: 14px 0;
+  }
+
+  .info-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--clr-accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 1px;
+  }
+
+  .info-divider {
+    height: 1px;
+    background: var(--clr-border);
+  }
+
+  /* ── WhatsApp button ── */
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+    margin-top: 4px;
+  }
+  .btn-whatsapp:hover {
+    background: #1fba58;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.38);
+  }
+
+  /* ── Advisor link ── */
+  .advisor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--clr-text-3);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s, gap 0.2s;
+    margin-top: -4px;
+  }
+  .advisor-link:hover {
+    color: var(--clr-accent);
+    gap: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .title {
+      font-size: 36px;
+    }
+    .info-card {
+      padding: 16px 18px;
+    }
+  }
+</style>

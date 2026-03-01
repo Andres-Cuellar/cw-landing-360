@@ -1,0 +1,478 @@
+---
+import ellement from "../assets/portfolio/ellement.avif";
+import business from "../assets/portfolio/business.avif";
+import marketing from "../assets/portfolio/marketing.avif";
+import mobileapp from "../assets/portfolio/mobileapp.avif";
+import software from "../assets/portfolio/software.avif";
+import socialmedia from "../assets/portfolio/socialmedia.avif";
+---
+
+<section class="portfolio-section" id="portafolio">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">CASOS DE ÉXITO PÚBLICOS</span>
+      <h2 class="title">Sistemas Implementados</h2>
+    </div>
+
+    <div class="slider-wrapper">
+      <button class="slider-btn" id="prevBtn" aria-label="Anterior" disabled>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="15 18 9 12 15 6"></polyline></svg
+        >
+      </button>
+
+      <div class="slider-viewport">
+        <div class="slider-track" id="sliderTrack">
+          <!-- Card 1 -->
+          <div class="portfolio-card photo-card">
+            <div class="card-bg">
+              <img src={ellement.src} alt="Abstract gradient" class="bg-img" />
+              <div class="photo-scrim"></div>
+            </div>
+            <div class="card-content">
+              <span class="card-badge">PRODUCTO</span>
+            </div>
+          </div>
+
+          <div class="portfolio-card photo-card">
+            <div class="card-bg">
+              <img src={software.src} alt="Abstract gradient" class="bg-img" />
+              <div class="photo-scrim"></div>
+            </div>
+            <div class="card-content">
+              <span class="card-badge">SOFTWARE</span>
+            </div>
+          </div>
+
+          <div class="portfolio-card photo-card">
+            <div class="card-bg">
+              <img src={business.src} alt="Abstract gradient" class="bg-img" />
+              <div class="photo-scrim"></div>
+            </div>
+            <div class="card-content">
+              <span class="card-badge">NEGOCIOS</span>
+            </div>
+          </div>
+
+          <div class="portfolio-card photo-card">
+            <div class="card-bg">
+              <img
+                src={socialmedia.src}
+                alt="Abstract gradient"
+                class="bg-img"
+              />
+              <div class="photo-scrim"></div>
+            </div>
+            <div class="card-content">
+              <span class="card-badge">REDES SOCIALES</span>
+            </div>
+          </div>
+
+          <div class="portfolio-card photo-card">
+            <div class="card-bg">
+              <img src={marketing.src} alt="Abstract gradient" class="bg-img" />
+              <div class="photo-scrim"></div>
+            </div>
+            <div class="card-content">
+              <span class="card-badge">MARKETING</span>
+            </div>
+          </div>
+
+          <div class="portfolio-card photo-card">
+            <div class="card-bg">
+              <img src={mobileapp.src} alt="Abstract gradient" class="bg-img" />
+              <div class="photo-scrim"></div>
+            </div>
+            <div class="card-content">
+              <span class="card-badge">APLICACIONES MÓVILES</span>
+            </div>
+          </div>
+        </div><!-- /slider-track -->
+      </div><!-- /slider-viewport -->
+
+      <button class="slider-btn" id="nextBtn" aria-label="Siguiente">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="9 18 15 12 9 6"></polyline></svg
+        >
+      </button>
+    </div><!-- /slider-wrapper -->
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById("sliderTrack") as HTMLElement;
+  const prevBtn = document.getElementById("prevBtn") as HTMLButtonElement;
+  const nextBtn = document.getElementById("nextBtn") as HTMLButtonElement;
+
+  const TOTAL_CARDS = 6;
+  let current = 0;
+
+  function getVisibleCount(): number {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function getCardWidth(): number {
+    const card = track.querySelector(".portfolio-card") as HTMLElement;
+    return card.offsetWidth + 24; // 24 = gap
+  }
+
+  function update() {
+    const maxIndex = TOTAL_CARDS - getVisibleCount();
+    if (current > maxIndex) current = maxIndex;
+    track.style.transform = `translateX(-${current * getCardWidth()}px)`;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= maxIndex;
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (current > 0) {
+      current--;
+      update();
+    }
+  });
+  nextBtn.addEventListener("click", () => {
+    const maxIndex = TOTAL_CARDS - getVisibleCount();
+    if (current < maxIndex) {
+      current++;
+      update();
+    }
+  });
+
+  window.addEventListener("resize", update);
+  update();
+</script>
+
+<style>
+  .portfolio-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 24px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--clr-bg-page);
+  }
+  .container {
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .badge {
+    display: inline-block;
+    color: var(--clr-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border: 1px solid var(--clr-accent-border);
+    background: var(--clr-accent-bg);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .title {
+    color: var(--clr-text);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── Slider ── */
+  .slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .slider-viewport {
+    flex: 1;
+    overflow: hidden;
+    container-type: inline-size;
+  }
+  .slider-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  .slider-btn {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1.5px solid var(--clr-border);
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      border-color 0.2s,
+      opacity 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  .slider-btn:hover:not(:disabled) {
+    background: var(--clr-text);
+    border-color: var(--clr-text);
+    color: var(--clr-bg);
+  }
+  .slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .portfolio-card {
+    flex-shrink: 0;
+    width: calc((100cqi - 48px) / 3);
+    background: var(--clr-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    border: 1px solid var(--clr-border);
+  }
+  .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+  }
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+  }
+  .purple-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(200, 150, 255, 0.4) 100%
+    );
+  }
+  .blue-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(150, 200, 255, 0.6) 100%
+    );
+  }
+  .green-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(200, 240, 210, 0.7) 100%
+    );
+  }
+
+  /* ── Photo card (Card 1) ── */
+  .photo-card .bg-img {
+    opacity: 1;
+    /* Override the generic object-fit:cover so the image renders at its natural height */
+    height: auto;
+    min-height: 100%;
+    object-fit: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  /* On hover: slide image up to reveal the bottom
+     translateY(-100%) moves it up by 100% of its own height,
+     then +600px (card height) brings the bottom edge back into view */
+  .photo-card:hover .bg-img {
+    transform: translateY(calc(-100% + 600px));
+  }
+  .photo-scrim {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      transparent 100%
+    );
+  }
+  .photo-card .card-content {
+    justify-content: flex-end;
+    padding-bottom: 32px;
+  }
+  .photo-card .card-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--clr-bg);
+    backdrop-filter: blur(6px);
+  }
+  .photo-card .card-title {
+    color: var(--clr-bg);
+  }
+  .photo-card .card-subtitle {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 2;
+    padding: 32px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+  }
+  .card-badge {
+    color: var(--clr-text);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  .card-title {
+    color: var(--clr-text);
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .card-subtitle {
+    color: var(--clr-text-4);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 32px 0;
+  }
+
+  /* Bottom Actions */
+  .card-action-blur {
+    width: 100%;
+    padding: 24px 24px 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.7) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(2px);
+  }
+
+  .result-badge {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid var(--clr-success);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 12px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+  }
+
+  .btn-see-portfolio {
+    background: var(--clr-text);
+    color: var(--clr-bg);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.2s,
+      background 0.2s;
+    width: 85%;
+  }
+  .btn-see-portfolio:hover {
+    transform: translateY(-2px);
+    background: var(--clr-accent);
+  }
+
+  .card-footer {
+    position: relative;
+    z-index: 3;
+    background: var(--clr-bg);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    text-align: center;
+  }
+  .card-footer p {
+    margin: 0;
+    color: var(--clr-text-3);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 1024px) {
+    .portfolio-card {
+      width: calc((100cqi - 24px) / 2);
+    }
+  }
+  @media (max-width: 640px) {
+    .portfolio-card {
+      width: 100cqi;
+    }
+    .slider-btn {
+      width: 36px;
+      height: 36px;
+    }
+    .title {
+      font-size: 36px;
+    }
+  }
+</style>

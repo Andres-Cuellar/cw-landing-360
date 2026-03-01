@@ -1,0 +1,477 @@
+---
+const testimonials = [
+  {
+    id: 1,
+    name: "Miguel Torres",
+    company: "Torres Moda, Colombia",
+    type: "Ecommerce",
+    text: `"Teníamos una tienda física en Medellín pero queríamos vender en toda Colombia. El ecommerce que nos desarrollaron superó todas las expectativas: integración con Mercado Pago, inventario en tiempo real y un diseño que refleja nuestra marca. En los primeros 3 meses triplicamos las ventas frente a lo que hacíamos presencialmente."`,
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+  },
+  {
+    id: 2,
+    name: "Daniela Vega",
+    company: "Vega Propiedades, México",
+    type: "Landing Page",
+    text: `"Como agente independiente necesitaba una landing que me diferenciara de las grandes inmobiliarias. Me diseñaron una página con formulario de calificación de leads y WhatsApp automático. Ahora recibo prospectos filtrados que ya conocen mis servicios. Mi tasa de cierre subió del 12% al 31% en menos de dos meses."`,
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+  },
+  {
+    id: 3,
+    name: "Sebastián Morales",
+    company: "Morales Consulting, España",
+    type: "Sitio Web",
+    text: `"Llevábamos 8 años con la misma web de 2016. Era vergonzoso mandar el link a un cliente potencial. El sitio nuevo carga en menos de 2 segundos y está perfectamente optimizado para SEO. En 4 meses pasamos del puesto 47 al puesto 6 en Google para nuestra keyword principal. El ROI fue inmediato."`,
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+  },
+  {
+    id: 4,
+    name: "Valentina Ríos",
+    company: "Natura Pura, Chile",
+    type: "Ecommerce",
+    text: `"Tenía una marca de cosméticos naturales que vendía solo por DMs de Instagram. Era un caos: sin inventario, sin cobros automatizados, sin nada. Me montaron un ecommerce completo con pasarela de pagos, emails automáticos y programa de referidos. Hoy proceso más de 200 pedidos al mes prácticamente sola."`,
+    image:
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+  },
+  {
+    id: 5,
+    name: "Andrés Castellanos",
+    company: "Fit con Andrés, Argentina",
+    type: "Landing Page",
+    text: `"Tenía 40k seguidores en Instagram pero no convertía a nada. La landing que me crearon tiene video de background, sección de transformaciones antes/después y el formulario conectado directo a mi CRM. Lancé mi programa de 12 semanas y llené los 30 cupos en menos de 48 horas. Nunca me había pasado algo así."`,
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+  },
+  {
+    id: 6,
+    name: "Patricia Mendoza",
+    company: "La Mesa de Patricia, Colombia",
+    type: "Sitio Web",
+    text: `"Nuestro restaurante tiene una propuesta gastronómica única pero nuestra presencia digital era nula. Nos desarrollaron una web con reservas online, menú digital interactivo y galería profesional. Las reservas anticipadas pasaron de 15% a 78% del total de mesas. El cambio fue brutal desde el primer fin de semana."`,
+    image:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+  },
+];
+---
+
+<section class="testimonials-section" id="testimonios">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">CASOS DE ÉXITO PÚBLICOS</span>
+      <h2 class="title">Lo Que Dicen Nuestros Clientes</h2>
+      <p class="subtitle">
+        Emprendedores y empresas que ya no pierden dinero por fricción técnica
+      </p>
+    </div>
+
+    <!-- ... rest of the testimonial HTML slider is visually the same as before, just using new array ... -->
+    <div class="slider-container">
+      <div class="slider-wrapper" id="testimonial-slider">
+        {
+          testimonials.map((t) => (
+            <div class="slide">
+              <div class="slide-content">
+                <div class="visual-side">
+                  <div class="laptop-mockup">
+                    <div class="laptop-screen">
+                      <img src={t.image} alt="Project Mockup" />
+                    </div>
+                    <div class="laptop-base">
+                      <div class="laptop-keyboard" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-side">
+                  <span class="project-type">{t.type}</span>
+                  <div class="stars">
+                    {[...Array(5)].map(() => (
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="#f59e0b"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p class="client-quote">{t.text}</p>
+                  <div class="client-info">
+                    <img class="client-avatar" src={t.avatar} alt={t.name} />
+                    <div>
+                      <h4 class="client-name">{t.name}</h4>
+                      <p class="client-company">{t.company}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <button class="slider-btn prev-btn" id="t-prev" aria-label="Previous">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          ><path d="M15 18l-6-6 6-6"></path>
+        </svg>
+      </button>
+      <button class="slider-btn next-btn" id="t-next" aria-label="Next">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          ><path d="M9 18l6-6-6-6"></path>
+        </svg>
+      </button>
+
+      <div class="dots-container" id="t-dots">
+        {
+          testimonials.map((_, index) => (
+            <button
+              class={`dot ${index === 0 ? "active" : ""}`}
+              data-index={index}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px 100px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--clr-bg-page);
+  }
+
+  .container {
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge {
+    display: inline-block;
+    color: var(--clr-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border: 1px solid var(--clr-accent-border);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .title {
+    color: var(--clr-text);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    color: var(--clr-text-3);
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .slider-container {
+    background: var(--clr-featured);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 100%;
+    padding: 0 80px;
+    box-sizing: border-box;
+  }
+
+  .slide-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+  }
+
+  .visual-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .laptop-mockup {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .laptop-screen {
+    width: 90%;
+    aspect-ratio: 16/10;
+    background: #111;
+    border: 12px solid #222;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .laptop-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .laptop-base {
+    width: 100%;
+    height: 16px;
+    background: var(--clr-border-md);
+    border-radius: 2px 2px 8px 8px;
+    position: relative;
+    box-shadow: inset 0 -4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .laptop-base::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--clr-text-5);
+    border-radius: 0 0 4px 4px;
+  }
+
+  .text-side {
+    flex: 1;
+    color: var(--clr-bg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-type {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+  .stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+  .client-quote {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--clr-border);
+    margin: 0 0 28px 0;
+    font-weight: 400;
+  }
+  .client-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+  }
+  .client-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+  }
+  .client-name {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 3px 0;
+    color: var(--clr-bg-muted);
+  }
+  .client-company {
+    font-size: 13px;
+    color: var(--clr-text-5);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: var(--clr-bg);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--clr-text);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.2s,
+      background 0.2s;
+    z-index: 10;
+  }
+  .slider-btn:hover {
+    background: var(--clr-bg-muted);
+    transform: translateY(-50%) scale(1.05);
+  }
+  .prev-btn {
+    left: 24px;
+  }
+  .next-btn {
+    right: 24px;
+  }
+
+  .dots-container {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s;
+  }
+  .dot.active {
+    background: var(--clr-bg);
+  }
+
+  @media (max-width: 900px) {
+    .slide-content {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .slide {
+      padding: 0 40px;
+    }
+    .prev-btn {
+      left: 10px;
+      width: 40px;
+      height: 40px;
+    }
+    .next-btn {
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = 6;
+
+  const sWrapper = document.getElementById("testimonial-slider");
+  const sPrev = document.getElementById("t-prev");
+  const sNext = document.getElementById("t-next");
+  const dotsContainer = document.getElementById("t-dots");
+
+  function updateSlider() {
+    if (!sWrapper) return;
+    sWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }
+  }
+
+  if (sPrev && sNext && sWrapper) {
+    sPrev.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    });
+    sNext.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    });
+
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentSlide = index;
+          updateSlider();
+        });
+      });
+    }
+  }
+</script>
