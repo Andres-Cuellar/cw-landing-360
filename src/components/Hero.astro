@@ -327,6 +327,10 @@ import banner from "../assets/banner.webp";
         .hero-description {
             font-size: 16px;
         }
+        .hero-ctas {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .logos-container {
             gap: 12px;
             max-width: calc(100vw - 140px);
@@ -338,6 +342,47 @@ import banner from "../assets/banner.webp";
         }
         .trusted-carousel {
             gap: 12px;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .hero-section {
+            padding: 56px 16px 80px;
+        }
+
+        .hero-title {
+            font-size: 32px;
+        }
+
+        .hero-description {
+            font-size: 15px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-mockup-wrapper {
+            margin-top: 36px;
+        }
+
+        .mockup-image {
+            height: 280px;
+        }
+
+        .trusted-section {
+            margin-top: 56px;
+        }
+
+        .carousel-btn {
+            display: none;
+        }
+
+        .logos-container {
+            max-width: 100%;
+            padding: 0 8px;
         }
     }
 </style>
